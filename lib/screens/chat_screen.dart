@@ -6,43 +6,18 @@ import 'package:firebase_app/widgets/chat/new_message.dart';
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_app/widgets/authentication/signout.dart';
 
 class ChatScreen extends StatelessWidget {
-  //const ChatScreen({super.key});
+  const ChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('My Chat'), actions: [
-        DropdownButton(
-          underline: Container(),
-          icon: Icon(
-            Icons.more_vert,
-            color: Theme.of(context).primaryIconTheme.color,
-          ),
-          items: [
-            DropdownMenuItem(
-              child: Container(
-                child: Row(
-                  children: [
-                    Icon(Icons.exit_to_app),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    Text('Logout'),
-                  ],
-                ),
-              ),
-              value: 'logout',
-            ),
-          ],
-          onChanged: (itemIdentifier) {
-            if (itemIdentifier == 'logout') {
-              FirebaseAuth.instance.signOut();
-            }
-          },
-        ),
-      ]),
+      appBar: AppBar(
+        title: Text('My Chat'),
+        actions: [Signout()],
+      ),
       body: Container(
         child: Column(
           children: [

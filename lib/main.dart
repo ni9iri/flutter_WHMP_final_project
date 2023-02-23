@@ -1,11 +1,14 @@
 import 'package:firebase_app/screens/auth_screen.dart';
 import 'package:firebase_app/screens/chat_screen.dart';
+import 'package:firebase_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_app/firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
+  //await dotenv.load(fileName: ".env");
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -37,7 +40,7 @@ class MyApp extends StatelessWidget {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (ctx, userSnapshot) {
             if (userSnapshot.hasData) {
-              return ChatScreen();
+              return HomeScreen();
             }
             return AuthScreen();
           },

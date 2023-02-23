@@ -5,11 +5,9 @@ import 'package:flutter/material.dart';
 class AuthForm extends StatefulWidget {
   AuthForm(
     this.submitFn,
-    //this.isLoading,
     this.isLoading,
   );
 
-  //final bool isLoading;
   final bool isLoading;
 
   final void Function(
@@ -18,8 +16,6 @@ class AuthForm extends StatefulWidget {
     String username,
     bool isLogin,
   ) submitFn;
-
-  //const AuthForm({super.key});
 
   @override
   State<AuthForm> createState() => _AuthFormState();
@@ -109,8 +105,6 @@ class _AuthFormState extends State<AuthForm> {
                     ),
                   ),
                   SizedBox(height: 10),
-                  // if (widget.isLoading) CircularProgressIndicator(),
-                  // if (!widget.isLoading)
                   if (widget.isLoading) CircularProgressIndicator(),
                   if (!widget.isLoading)
                     ElevatedButton(

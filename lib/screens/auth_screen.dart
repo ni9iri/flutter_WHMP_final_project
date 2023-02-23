@@ -64,18 +64,12 @@ class _AuthScreenState extends State<AuthScreen> {
           backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
-      // setState(() {
-      //   _isLoading = false;
-      // });
       setState(() {
         _isLoading = false;
       });
     } catch (err) {
       print(err);
 
-      // setState(() {
-      //   _isLoading = false;
-      // });
       setState(() {
         _isLoading = false;
       });
