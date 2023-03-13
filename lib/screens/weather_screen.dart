@@ -12,6 +12,7 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
+  // Create a new instance of the WeatherFactory class with my API key
   WeatherFactory wf = new WeatherFactory(MY_API_KEY);
   Weather? _weather;
   String? _error;

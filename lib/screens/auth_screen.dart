@@ -1,4 +1,4 @@
-import 'package:firebase_app/widgets/auth_form.dart';
+import 'package:firebase_app/widgets/authentication/auth_form.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -16,7 +16,6 @@ class AuthScreen extends StatefulWidget {
 
 class _AuthScreenState extends State<AuthScreen> {
   final _auth = FirebaseAuth.instance;
-  //var _isLoading = false;
   var _isLoading = false;
 
   void _submitAuthForm(
@@ -27,9 +26,6 @@ class _AuthScreenState extends State<AuthScreen> {
   ) async {
     UserCredential authResult;
     try {
-      // setState(() {
-      //   _isLoading = true;
-      // });
       setState(() {
         _isLoading = true;
       });
